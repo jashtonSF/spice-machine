@@ -1,1 +1,1 @@
-# firmware folder for spice machine project
+# folder for spice machine firmware files
