@@ -8,4 +8,5 @@ Enter '2' for half revolution
 Enter '3' for quarter revolution
 Enter '4' for eigth revolution
 
-
+Hardware setup for "stepper-serial-degree.ino":
+![alt tage](https://github.com/jashtonSF/spice-machine/blob/master/firmware/Spice-stepper-serial-degree%20v1.0.jpg)
