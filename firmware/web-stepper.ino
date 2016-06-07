@@ -24,7 +24,7 @@ void setup()
 {
   pinMode(stp, OUTPUT);
   pinMode(dir, OUTPUT);
-  digitalWrite(dir, LOW);
+  digitalWrite(dir, LOW); // to reverse motor direction, write DIR "HIGH"
   digitalWrite(stp, LOW);
   Serial.begin(9600); //Open Serial connection for debugging
   Serial.println("Starting up the Spice Machine web control...");
