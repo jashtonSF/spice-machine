@@ -1,6 +1,6 @@
 # folder for spice machine firmware files
 
-###Hardware setup for all firmware sketches in this folder:
+###Hardware setup for the stepper firmware sketches in this folder:
 ![alt tage](https://github.com/jashtonSF/spice-machine/blob/master/firmware/Spice-stepper-serial-degree%20v1.0.jpg)
 
 ###"web-stepper.ino"
