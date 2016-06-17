@@ -15,3 +15,11 @@ This sketch requires a serial connection to keyboard for input of numbers to con
 3. Enter '3' for quarter revolution
 4. Enter '4' for eigth revolution
 
+###"load-cell-calibration.ino"
+ This sketch is designed to help you calibrate your Particle Photon-connected load cell. Run this sketch and open a serial port for input/output. The first time you run this sketch, enter the number "1" to reset any existing calibration. Then type "2" to zero out the scale (tare). Place a known weight on the scale, then type "3" to measure and output the weight on the scale. The calibration parameter needed in .set_scale() is equal to the value output in step #3 divided by the mass of the known weight. Enter it inside the parentheses of the scale.set_scale() function under void setup().
+ 
+####Serial Inputs for "load-cell-calibration.ino"
+1. Enter '1' to reset scale calibration.
+2. Enter '2' to zero out scale (tare).
+3. Enter '3' to weigh and output weight value.
+4. Enter 'm' to list menu
