@@ -3,6 +3,9 @@
 ###Hardware setup for the stepper firmware sketches in this folder:
 ![alt tage](https://github.com/jashtonSF/spice-machine/blob/master/firmware/Spice-stepper-serial-degree%20v1.0.jpg)
 
+###"web-stepper-load-cell.ino"
+This sketch uses the html file "spice machine web w load cell v1.0.html" located in this repo's software folder, to provide browser control of the spice machine prototype stepper motor, the load cell, and additional functionality. This sketch exposes three cloud functions: "targetWeight" to select a desired target weight of spices to dispense, "uSecsDelay" to change the delay (for motor rotational speed control), and "zeroScale" to tare the load cell scale. The motor direction is hard coded, so to reverse motor direction, change the DIR pin from "LOW" to "HIGH" (or vice versa) in the sketch.
+
 ###"web-stepper.ino"
 This sketch uses the html file "spice machine web control v1.0.html" located in this repo's software folder, to provide browser control of the spice machine prototype stepper motor. This sketch exposes two cloud functions: "numsteps" to change the number of steps the motor should drive and "uSecsDelay" to change the delay (for motor rotational speed control). The motor direction is hard coded, so to reverse motor direction, change the DIR pin from "LOW" to "HIGH" in the sketch.
 
