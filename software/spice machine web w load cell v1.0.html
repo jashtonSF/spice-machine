@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<!---------------------------------------->
+<!-- This file created by Justin Ashton -->
+<!-- (c) J. Ashton & Company, Inc., 2016-->
+<!---------------------------------------->
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<body>
+<center>
+    <h2>Spice Machine Web Control w Load Cell v1.0</h2>
+    <h3>Enter target weight to dispense (grams): 0.0 - 100.0</h3><br>
+    <input type="number" name="weightBox" id="goalWeight" min="0" step="0.1" max="100" value="1" onchange="setValue(this);"/>
+    <br><br>
+	<h3> Change motor speed: 100 (fast)-1000 (slow)</h3><br>
+	<input type="number" name="delayBox" id="uSecs" min="100" max="1000" value="1000" onchange="setValue(this)"/><br><br>
+	<button style="background:green; font-weight: bold; color: white;" onclick="photonWeight(newWeight);">Dispense</button><br><br>
+	<h3>Zero the scale</h3>
+	<button style="background:green; font-weight: bold; color: white;" onclick="photonTare(1);">Tare Scale</button>
+	
+    <script type="text/javascript">
+      var deviceID    = "";  //enter your photon ID in the quotes
+      var accessToken = ""; //enter your photon token in the quotes 
+      var dummy = "tare";
+      // Photon cloud function names
+      var postWeight = "targetWeight";
+      var postDelay = "uSecsDelay";
+      var postTare = "zeroScale";
+      
+
+      function setValue(obj) {
+        newWeight = document.getElementById('goalWeight').value;
+        if(obj.id == "uSecs") {
+        	var newDelay = document.getElementById('uSecs').value;
+        	photonDelay(newDelay);
+        } 
+    	}
+      function photonTare(dummy){
+        var requestURL = "https://api.particle.io/v1/devices/" + deviceID + "/" + postTare + "/";
+        $.post( requestURL, { params: dummy, access_token: accessToken });
+      }
+      
+      function photonWeight(newWeight){
+        var requestURL = "https://api.particle.io/v1/devices/" + deviceID + "/" + postWeight + "/";
+        $.post( requestURL, { params: newWeight, access_token: accessToken });
+      }
+      
+      function photonDelay(newDelay){
+        var requestURL = "https://api.particle.io/v1/devices/" + deviceID + "/" + postDelay + "/";
+        $.post( requestURL, { params: newDelay, access_token: accessToken });
+      }
+     
+  
+
+    </script>
+  </center>
+</body>
+</html>
